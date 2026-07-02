@@ -1,0 +1,48 @@
+.spinner {
+  display: inline-block;
+  border-radius: 50%;
+  border-style: solid;
+  border-color: currentColor;
+  border-right-color: transparent;
+  animation: spin 0.7s linear infinite;
+  opacity: 0.85;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.skeleton-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 18px;
+}
+
+.skeleton-card {
+  background: var(--paper-raised);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.skeleton-line {
+  height: 12px;
+  border-radius: 6px;
+  background: linear-gradient(90deg, var(--rule) 25%, var(--paper) 37%, var(--rule) 63%);
+  background-size: 400% 100%;
+  animation: shimmer 1.4s ease infinite;
+}
+
+.skeleton-line--title { width: 60%; height: 16px; }
+.skeleton-line--short { width: 40%; }
+
+.skeleton-footer { display: flex; gap: 8px; margin-top: 8px; }
+.skeleton-chip { width: 70px; height: 10px; border-radius: 6px; background: var(--rule); }
+
+@keyframes shimmer {
+  0% { background-position: 100% 0; }
+  100% { background-position: -100% 0; }
+}

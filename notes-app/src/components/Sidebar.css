@@ -1,0 +1,91 @@
+.sidebar {
+  width: 240px;
+  min-width: 240px;
+  border-right: 1px solid var(--rule);
+  background: var(--paper-raised);
+  padding: 22px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.sidebar__header { display: none; align-items: center; justify-content: space-between; }
+.sidebar__title { font-family: var(--font-display); font-size: 1.05rem; font-weight: 600; }
+.sidebar__close { background: none; border: none; font-size: 1.2rem; color: var(--ink-soft); }
+
+.sidebar__stat {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+  border-radius: var(--radius-md);
+  background: var(--accent-soft);
+  color: var(--accent-dark);
+  font-size: 1.1rem;
+}
+.sidebar__stat div { display: flex; flex-direction: column; font-size: 0.78rem; color: var(--ink-soft); }
+.sidebar__stat strong { font-size: 1.15rem; font-family: var(--font-display); color: var(--ink); }
+
+.sidebar__section { display: flex; flex-direction: column; gap: 6px; }
+.sidebar__label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink-faint);
+  margin: 0 0 4px 4px;
+}
+
+.sidebar__option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--ink-soft);
+  font-size: 0.88rem;
+  text-align: left;
+}
+.sidebar__option:hover { background: var(--paper); }
+.sidebar__option--active {
+  background: var(--accent-soft);
+  color: var(--accent-dark);
+  font-weight: 600;
+  border-color: var(--accent);
+}
+
+.sidebar__footer {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.78rem;
+  color: var(--ink-faint);
+  padding-top: 14px;
+  border-top: 1px dashed var(--rule);
+}
+
+.sidebar__scrim { display: none; }
+
+@media (max-width: 900px) {
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 300;
+    transform: translateX(-100%);
+    transition: transform .28s ease;
+    box-shadow: var(--shadow-lg);
+  }
+  .sidebar--open { transform: translateX(0); }
+  .sidebar__header { display: flex; }
+  .sidebar__scrim {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.35);
+    z-index: 290;
+  }
+}

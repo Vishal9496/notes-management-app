@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header id="appHeader" class="app-header hidden">
+    <h1 class="brand">Notes Manager</h1>
+    <div class="header-right">
+        <span id="welcomeMessage" class="welcome-message"></span>
+        <button id="logoutBtn" class="btn btn-secondary">Logout</button>
+    </div>
+</header>
+
+<main class="main-container">
+
+    <section id="loginSection" class="auth-section">
+        <div class="auth-card">
+            <h2>Login</h2>
+            <form id="loginForm" class="auth-form">
+                <div class="form-group">
+                    <label for="loginEmail">Email</label>
+                    <input type="email" id="loginEmail" name="loginEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" name="loginPassword" required>
+                </div>
+                <p id="loginError" class="error-message"></p>
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+            <p class="auth-switch">Don't have an account? <a href="#" id="showRegisterLink">Register</a></p>
+        </div>
+    </section>
+
+    <section id="registerSection" class="auth-section hidden">
+        <div class="auth-card">
+            <h2>Register</h2>
+            <form id="registerForm" class="auth-form">
+                <div class="form-group">
+                    <label for="registerName">Name</label>
+                    <input type="text" id="registerName" name="registerName" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerEmail">Email</label>
+                    <input type="email" id="registerEmail" name="registerEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerPassword">Password</label>
+                    <input type="password" id="registerPassword" name="registerPassword" required>
+                </div>
+                <p id="registerError" class="error-message"></p>
+                <button type="submit" class="btn btn-primary">Register</button>
+            </form>
+            <p class="auth-switch">Already have an account? <a href="#" id="showLoginLink">Login</a></p>
+        </div>
+    </section>
+
+    <section id="dashboardSection" class="dashboard-section hidden">
+
+        <div class="add-note-card">
+            <h2>Add Note</h2>
+            <form id="noteForm" class="note-form">
+                <input type="hidden" id="noteId" name="noteId">
+                <div class="form-group">
+                    <label for="noteTitle">Title</label>
+                    <input type="text" id="noteTitle" name="noteTitle" required>
+                </div>
+                <div class="form-group">
+                    <label for="noteContent">Content</label>
+                    <textarea id="noteContent" name="noteContent" rows="4" required></textarea>
+                </div>
+                <p id="noteError" class="error-message"></p>
+                <button type="submit" id="noteSubmitBtn" class="btn btn-primary">Save Note</button>
+            </form>
+        </div>
+
+        <div class="notes-list-wrapper">
+            <h2>Your Notes</h2>
+            <div id="notesContainer" class="notes-container"></div>
+        </div>
+
+    </section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>

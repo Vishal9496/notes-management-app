@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  --paper: #faf9f5;
+  --paper-raised: #ffffff;
+  --ink: #1c1e1b;
+  --ink-soft: #5a5d55;
+  --ink-faint: #93958c;
+  --rule: #e4e1d6;
+  --accent: #2f6f4e;
+  --accent-dark: #244f38;
+  --accent-soft: #e3ede6;
+  --highlight: #d99a3d;
+  --highlight-soft: #fbecd3;
+  --danger: #b3462c;
+  --danger-soft: #f6e2dc;
+  --shadow-sm: 0 1px 2px rgba(28, 30, 27, 0.06), 0 1px 1px rgba(28,30,27,0.04);
+  --shadow-md: 0 8px 24px rgba(28, 30, 27, 0.08), 0 2px 6px rgba(28,30,27,0.06);
+  --shadow-lg: 0 20px 48px rgba(28, 30, 27, 0.16), 0 6px 16px rgba(28,30,27,0.08);
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --font-display: 'Fraunces', serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  color-scheme: light;
+  transition: background-color .25s ease, color .25s ease;
+}
+
+[data-theme='dark'] {
+  --paper: #14161a;
+  --paper-raised: #1d2024;
+  --ink: #eeece5;
+  --ink-soft: #a7a89f;
+  --ink-faint: #6d6f68;
+  --rule: #2a2d31;
+  --accent: #4c9a75;
+  --accent-dark: #6bb891;
+  --accent-soft: #1c2b23;
+  --highlight: #e0ab54;
+  --highlight-soft: #2e2517;
+  --danger: #d9694a;
+  --danger-soft: #2e1e19;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.3);
+  --shadow-md: 0 8px 24px rgba(0,0,0,0.35);
+  --shadow-lg: 0 20px 48px rgba(0,0,0,0.5);
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+
+html, body, #root { height: 100%; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; margin: 0; letter-spacing: -0.01em; }
+
+button { font-family: inherit; cursor: pointer; }
+input, textarea { font-family: inherit; }
+
+a { color: inherit; text-decoration: none; }
+
+::selection { background: var(--highlight-soft); color: var(--ink); }
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.scrollbar-thin::-webkit-scrollbar { width: 8px; }
+.scrollbar-thin::-webkit-scrollbar-thumb { background: var(--rule); border-radius: 8px; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

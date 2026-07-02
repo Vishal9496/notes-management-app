@@ -1,0 +1,86 @@
+.modal-scrim {
+  position: fixed;
+  inset: 0;
+  background: rgba(20, 20, 18, 0.45);
+  backdrop-filter: blur(3px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 500;
+  padding: 20px;
+}
+
+.modal {
+  width: 100%;
+  max-width: 480px;
+  background: var(--paper-raised);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--rule);
+  overflow: hidden;
+}
+
+.modal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 22px 12px;
+}
+.modal__header h2 { font-size: 1.3rem; }
+
+.modal__close {
+  background: none;
+  border: none;
+  color: var(--ink-faint);
+  font-size: 1.2rem;
+  display: flex;
+  padding: 4px;
+  border-radius: 8px;
+}
+.modal__close:hover { color: var(--ink); background: var(--rule); }
+
+.modal__form { padding: 4px 22px 22px; display: flex; flex-direction: column; gap: 16px; }
+
+.modal__field { display: flex; flex-direction: column; gap: 6px; }
+.modal__field label { font-size: 0.78rem; font-weight: 600; color: var(--ink-soft); }
+
+.modal__field input,
+.modal__field textarea {
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+  font-size: 0.92rem;
+  background: var(--paper);
+  color: var(--ink);
+  resize: vertical;
+  outline: none;
+  transition: border-color .2s, box-shadow .2s;
+}
+.modal__field input:focus, .modal__field textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+.modal__field-footer { display: flex; justify-content: space-between; font-size: 0.72rem; }
+.modal__error { color: var(--danger); }
+.modal__counter { color: var(--ink-faint); font-family: var(--font-mono); margin-left: auto; }
+
+.modal__actions { display: flex; justify-content: flex-end; gap: 10px; margin-top: 4px; }
+
+.modal__btn {
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  border: 1px solid transparent;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 100px;
+  justify-content: center;
+}
+.modal__btn--ghost { background: transparent; border-color: var(--rule); color: var(--ink-soft); }
+.modal__btn--ghost:hover { background: var(--paper); }
+.modal__btn--primary { background: var(--accent); color: #fff; }
+.modal__btn--primary:hover { background: var(--accent-dark); }
+.modal__btn--primary:disabled { opacity: 0.7; cursor: not-allowed; }
